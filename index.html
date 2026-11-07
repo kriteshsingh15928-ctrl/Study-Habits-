@@ -35,35 +35,187 @@
     .quote-fade {
       transition: opacity 0.6s ease-in-out;
     }
+
+    /* Theme Definitions */
+    body.theme-night {
+      background-color: #0f172a !important;
+      color: #e2e8f0 !important;
+    }
+    body.theme-night .bg-white {
+      background-color: #1e293b !important;
+      border-color: #334155 !important;
+      color: #f8fafc !important;
+    }
+    body.theme-night .bg-slate-50 {
+      background-color: #0f172a !important;
+      border-color: #334155 !important;
+      color: #cbd5e1 !important;
+    }
+    body.theme-night .text-slate-900, body.theme-night .text-slate-800 {
+      color: #f8fafc !important;
+    }
+    body.theme-night .text-slate-700, body.theme-night .text-slate-600 {
+      color: #cbd5e1 !important;
+    }
+    body.theme-night .text-slate-500, body.theme-night .text-slate-400 {
+      color: #94a3b8 !important;
+    }
+    body.theme-night input, body.theme-night select {
+      background-color: #0f172a !important;
+      color: #f8fafc !important;
+      border-color: #334155 !important;
+    }
+
+    /* Sepia / Warm Paper Theme */
+    body.theme-sepia {
+      background-color: #fbf7ee !important;
+      color: #433422 !important;
+    }
+    body.theme-sepia .bg-white {
+      background-color: #fffdfa !important;
+      border-color: #e6decb !important;
+      color: #433422 !important;
+    }
+    body.theme-sepia .bg-slate-50 {
+      background-color: #f5ede0 !important;
+      border-color: #e6decb !important;
+      color: #5c4730 !important;
+    }
+    body.theme-sepia input, body.theme-sepia select {
+      background-color: #fffdfa !important;
+      color: #433422 !important;
+      border-color: #e6decb !important;
+    }
+
+    /* Forest Green Theme */
+    body.theme-forest {
+      background-color: #064e3b !important;
+      color: #ecfdf5 !important;
+    }
+    body.theme-forest .bg-white {
+      background-color: #04382a !important;
+      border-color: #065f46 !important;
+      color: #ecfdf5 !important;
+    }
+    body.theme-forest .bg-slate-50 {
+      background-color: #064e3b !important;
+      border-color: #065f46 !important;
+      color: #a7f3d0 !important;
+    }
+    body.theme-forest .text-slate-900, body.theme-forest .text-slate-800 {
+      color: #ffffff !important;
+    }
+    body.theme-forest input, body.theme-forest select {
+      background-color: #032b20 !important;
+      color: #ffffff !important;
+      border-color: #065f46 !important;
+    }
+
+    /* Midnight OLED Theme */
+    body.theme-oled {
+      background-color: #000000 !important;
+      color: #e5e5e5 !important;
+    }
+    body.theme-oled .bg-white {
+      background-color: #0a0a0a !important;
+      border-color: #262626 !important;
+      color: #ffffff !important;
+    }
+    body.theme-oled .bg-slate-50 {
+      background-color: #121212 !important;
+      border-color: #262626 !important;
+      color: #d4d4d4 !important;
+    }
+    body.theme-oled input, body.theme-oled select {
+      background-color: #000000 !important;
+      color: #ffffff !important;
+      border-color: #262626 !important;
+    }
+
+
+    /* Accessibility Drawer Theme Adapters */
+    body.theme-night #accessibility-drawer {
+      background-color: #1e293b !important;
+      border-color: #f59e0b !important;
+      color: #f8fafc !important;
+    }
+    body.theme-night #accessibility-drawer .bg-white {
+      background-color: #0f172a !important;
+      border-color: #334155 !important;
+    }
+    body.theme-oled #accessibility-drawer {
+      background-color: #0a0a0a !important;
+      border-color: #f59e0b !important;
+      color: #ffffff !important;
+    }
+    body.theme-oled #accessibility-drawer .bg-white {
+      background-color: #171717 !important;
+      border-color: #262626 !important;
+    }
+    body.theme-forest #accessibility-drawer {
+      background-color: #04382a !important;
+      border-color: #10b981 !important;
+      color: #ecfdf5 !important;
+    }
+    body.theme-forest #accessibility-drawer .bg-white {
+      background-color: #032b20 !important;
+      border-color: #065f46 !important;
+    }
+    body.theme-sepia #accessibility-drawer {
+      background-color: #fbf0d9 !important;
+      border-color: #d97706 !important;
+      color: #433422 !important;
+    }
+
   </style>
 </head>
 <body id="app-body" class="bg-slate-50 text-slate-800 min-h-screen py-8 px-4 sm:px-6 transition-colors">
   <div class="max-w-3xl mx-auto space-y-6">
     
-    <!-- Top Utility Bar: Sign-in & Accessibility -->
-    <div class="flex flex-wrap items-center justify-between gap-3 p-3 bg-white rounded-2xl border border-slate-200 shadow-sm text-xs">
+    <!-- Clean Top Utility Bar -->
+    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-3.5 space-y-3 sm:space-y-0 sm:flex sm:items-center sm:justify-between text-xs transition">
       
-      <!-- Account & Consent Status -->
-      <div class="flex items-center gap-2">
-        <div id="user-avatar" class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-600">
-          👤
+      <!-- Left: Student Account & Cloud Sync Status -->
+      <div class="flex items-center justify-between sm:justify-start gap-3">
+        <div class="flex items-center gap-2.5">
+          <div id="user-avatar" class="w-8 h-8 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center font-bold text-slate-700 shadow-sm">
+            👤
+          </div>
+          <div>
+            <p id="user-display-name" class="font-bold text-slate-900 leading-tight">Guest Mode (Local Only)</p>
+            <p id="user-consent-tag" class="text-[10px] text-slate-400">100% Free • Private on your device</p>
+          </div>
         </div>
-        <div>
-          <p id="user-display-name" class="font-bold text-slate-800">Guest Mode (Local Only)</p>
-          <p id="user-consent-tag" class="text-[10px] text-slate-400">Data stays on this device • Free forever</p>
-        </div>
-      </div>
 
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-2">
-        <button id="btn-google-auth" type="button" class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition flex items-center gap-1.5 shadow-sm">
+        <button id="btn-google-auth" type="button" class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold rounded-xl transition shadow-sm whitespace-nowrap">
           <span>Sign In with Google</span>
         </button>
-        <button id="btn-privacy-settings" type="button" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium rounded-xl transition">
-          🔒 Privacy & Data
+      </div>
+
+      <!-- Right: First-Class Accessibility & Theme Controls -->
+      <div class="flex flex-wrap items-center gap-2 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+        
+        <!-- Prominent Accessibility Toggle -->
+        <button id="btn-accessibility-toggle" type="button" class="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 font-bold rounded-xl transition flex items-center gap-1.5 shadow-sm">
+          <span>♿</span>
+          <span>Accessibility & ADHD</span>
         </button>
-        <button id="btn-accessibility-toggle" type="button" class="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 font-medium rounded-xl transition flex items-center gap-1">
-          <span>♿ Accessibility & ADHD</span>
+
+        <!-- Theme Selector -->
+        <div class="flex items-center gap-1 bg-slate-50 px-2 py-1 rounded-xl border border-slate-200">
+          <label for="theme-select" class="text-[10px] font-bold text-slate-500 uppercase">Theme</label>
+          <select id="theme-select" class="text-xs bg-transparent font-medium text-slate-700 focus:outline-none cursor-pointer">
+            <option value="light">☀️ Day</option>
+            <option value="night">🌙 Night</option>
+            <option value="sepia">📜 Sepia</option>
+            <option value="forest">🌲 Forest</option>
+            <option value="oled">🌌 OLED</option>
+          </select>
+        </div>
+
+        <!-- Privacy & Data -->
+        <button id="btn-privacy-settings" type="button" class="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium rounded-xl transition" title="Student Data Rights">
+          🔒 Privacy & Data
         </button>
       </div>
     </div>
@@ -129,7 +281,7 @@
     </header>
 
     <!-- ACCESSIBILITY DRAWER / PANEL (Collapsible) -->
-    <div id="accessibility-drawer" class="hidden bg-amber-50/70 border border-amber-200 rounded-2xl p-5 space-y-4">
+    <div id="accessibility-drawer" class="hidden bg-amber-50/90 border-2 border-amber-300 rounded-2xl p-5 space-y-4 shadow-sm transition">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
           <span class="text-lg">♿</span>
@@ -384,6 +536,61 @@
             </button>
           </div>
           <div id="blocked-tags" class="flex flex-wrap gap-1.5 pt-1"></div>
+        </div>
+      </section>
+
+      
+      <!-- Device-Wide Distraction & Adult Content Protection Guide -->
+      <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🛡️</span>
+            <div>
+              <h2 class="text-base font-bold text-slate-900">Device-Wide Adult Site & Distraction Blocker</h2>
+              <p class="text-xs text-slate-500">System-level content filtering for your entire phone and laptop.</p>
+            </div>
+          </div>
+          <span class="text-[10px] font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">
+            100% Free • School-Grade Safety
+          </span>
+        </div>
+
+        <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-2 text-slate-700">
+          <p class="leading-relaxed">
+            Because web apps run inside a secure sandbox, a website cannot forcefully rewrite other phone apps. However, you can enable <strong>Free Family & Adult Filtering DNS</strong> directly in your phone settings in <strong>60 seconds</strong>. This blocks 100% of adult websites, explicit content, and malicious links across your <em>entire phone</em> (all apps and browsers).
+          </p>
+
+          <div class="p-3 bg-white rounded-lg border border-slate-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-slate-900">Cloudflare Family Adult-Block DNS:</span>
+              <button id="btn-copy-dns" type="button" class="px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold rounded text-[11px] transition">
+                📋 Copy DNS Address
+              </button>
+            </div>
+            <code id="dns-hostname" class="block font-mono text-xs bg-slate-100 p-2 rounded text-indigo-700 font-bold">
+              family.cloudflare-dns.com
+            </code>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-[11px]">
+            <div class="p-2.5 bg-white rounded-lg border border-slate-200 space-y-1">
+              <p class="font-bold text-slate-900">📱 Android Setup (1 Tap):</p>
+              <ol class="list-decimal list-inside space-y-0.5 text-slate-600">
+                <li>Go to phone <strong>Settings > Network & Internet</strong>.</li>
+                <li>Tap <strong>Private DNS > Private DNS provider hostname</strong>.</li>
+                <li>Paste <code>family.cloudflare-dns.com</code> and tap <strong>Save</strong>.</li>
+              </ol>
+            </div>
+
+            <div class="p-2.5 bg-white rounded-lg border border-slate-200 space-y-1">
+              <p class="font-bold text-slate-900">🍏 iPhone & PC Setup:</p>
+              <ol class="list-decimal list-inside space-y-0.5 text-slate-600">
+                <li>Go to <strong>Settings > Wi-Fi > (i) Info > Configure DNS</strong>.</li>
+                <li>Select <strong>Manual</strong> and add primary server: <code>1.1.1.3</code></li>
+                <li>Secondary server: <code>1.0.0.3</code> (Blocks adult sites device-wide).</li>
+              </ol>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -2091,6 +2298,55 @@
       navigator.serviceWorker.addEventListener('controllerchange', () => {
         updateBanner.classList.remove('hidden');
       });
+    }
+
+    
+    // Theme Selector Logic
+    const themeSelect = document.getElementById('theme-select');
+    const storedTheme = localStorage.getItem('study_theme_v1') || 'light';
+    applyTheme(storedTheme);
+    themeSelect.value = storedTheme;
+
+    themeSelect.addEventListener('change', () => {
+      applyTheme(themeSelect.value);
+      try {
+        localStorage.setItem('study_theme_v1', themeSelect.value);
+      } catch (e) {}
+      showToast(`Theme updated to ${themeSelect.options[themeSelect.selectedIndex].text}`);
+    });
+
+    function applyTheme(theme) {
+      appBody.classList.remove('theme-night', 'theme-sepia', 'theme-forest', 'theme-oled');
+      if (theme === 'night') appBody.classList.add('theme-night');
+      if (theme === 'sepia') appBody.classList.add('theme-sepia');
+      if (theme === 'forest') appBody.classList.add('theme-forest');
+      if (theme === 'oled') appBody.classList.add('theme-oled');
+    }
+
+    // Copy DNS button
+    const btnCopyDns = document.getElementById('btn-copy-dns');
+    const dnsHostname = document.getElementById('dns-hostname');
+    btnCopyDns.addEventListener('click', () => {
+      const text = dnsHostname.textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast('Copied DNS hostname: ' + text);
+        }).catch(() => {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
+    });
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('Copied DNS hostname: ' + text);
     }
 
     // Analytics Calculation
